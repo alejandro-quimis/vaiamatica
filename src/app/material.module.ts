@@ -6,7 +6,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 const modules = [
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
 ];
 @NgModule({
     declarations: [],

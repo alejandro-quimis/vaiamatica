@@ -14,15 +14,19 @@ const components = [
   ListBuyPageComponent, RegisterBuyPageComponent,UpdateUserPageComponent,ActualizarComponent
 ]
 
+const modules =[
+  CommonModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DashboardRoutingModule
+]
+
 @NgModule({
   declarations: [...components, ShopPageComponent],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MaterialModule,
-    DashboardRoutingModule
+    ...modules
   ],
-  exports:[...components]
+  exports:[...components,...modules]
 })
 export class DashboardModule { }
