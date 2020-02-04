@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-actualizar',
@@ -14,7 +15,7 @@ export class ActualizarComponent implements OnInit {
   public forma: FormGroup;
   public user: Usuario;
   
-  constructor(public _userservice: UsuarioService , public _login: AuthService) {
+  constructor(public _userservice: UsuarioService , public _login: AuthService,private router:Router) {
 
     this.forma = new FormGroup({
         codigo: new FormControl({value:'',disabled:true}, Validators.required),
@@ -67,6 +68,13 @@ export class ActualizarComponent implements OnInit {
           title: 'Oops...',
           text: ' No se pudo actualizar Intentelo de nuevo.....', });
     });
+  }
+
+  eliminar(){
+    this._userservice.borrar(this.forma.get('codigo').value).subscribe(e=>{
+      this._login.logout();
+      this.router.navigate(['/login'])
+    })
   }
 
 }
