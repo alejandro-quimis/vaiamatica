@@ -13,8 +13,9 @@ export class AuthService {
     }
   }
 
-  login(user, userC, password, passwordC, id) {
+  login(user:string, userC:string, password:string, passwordC:string, id) {
      if (user === userC && password === passwordC){
+       console.log(user,userC, password, passwordC  );
       localStorage.setItem('user', JSON.stringify({
         user, password, id
       }));
@@ -23,6 +24,8 @@ export class AuthService {
         user, password, id
       }
       return true;
+     }else{
+       return false;
      }
   }
 
