@@ -1,0 +1,54 @@
+<div class="container-fluid" style="padding-bottom: 100px;">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                <form class="form" [formGroup]="form">
+
+                    <h3 class="login100-form-title abajo">REGISTRO DE USUARIO</h3>
+
+                    <div class="form-group ">
+                        <label>nombre</label>
+                        <input formControlName="nombre " type="text " class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>usuario</label>
+                        <input type="text " formControlName="usuario " class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>contraseña</label>
+                        <input type="password " formControlName="contrasena " class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>cedula</label>
+                        <input type="text " formControlName="cedula " class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>correo</label>
+                        <input type="text " formControlName="correo " class="form-control ">
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6 ">
+                            <label>Provincia</label>
+                            <select formControlName="provincia " class="form-control ">
+                                <option selected>seleccione...</option>
+                                <option >Guayas</option>
+                                <option>pichincha</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 ">
+                            <label>ciudad</label>
+                            <select formControlName="ciudad " class="form-control ">
+                                <option selected>seleccione...</option>
+                                <option>guayaquil</option>
+                                <option>quito</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit " class="btn btn-primary ">enviar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container-fluid" style="padding-bottom: 100px;">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                <form [formGroup]="forma" (ngSubmit)="Submit()">
+
+                    <h3 class="mt-4 abajo">ACTUALIZAR USUARIO</h3>
+                    <input formControlName="codigo" type="hidden" class="form-control ">
+                    <div class="form-group ">
+                        <label>nombre</label>
+                        <input formControlName="nombre" type="text " class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>usuario</label>
+                        <input type="text " formControlName="usuario" class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>contraseña</label>
+                        <input type="password" formControlName="contrasena" class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>cedula</label>
+                        <input type="text " formControlName="cedula" class="form-control ">
+                    </div>
+                    <div class="form-group ">
+                        <label>correo</label>
+                        <input type="text " formControlName="correo" class="form-control ">
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6 ">
+                            <label>Provincia</label>
+                            <select formControlName="provincia" class="form-control ">
+                                <option value="default" disabled selected>PROVINCIA</option>
+                                <option value="guayas">Guayas</option>
+                                <option value="pichincha">Pichincha</option>
+                                <option value="manabi">Manabi</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 ">
+                            <label>ciudad</label>
+                            <select formControlName="ciudad" class="form-control ">
+                                <option value="default" disabled selected>CIUDAD</option>
+                                <option value="guayaquil" >Guayaquil</option>
+                                <option value="quito">Quito</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit " class="btn btn-primary ">enviar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

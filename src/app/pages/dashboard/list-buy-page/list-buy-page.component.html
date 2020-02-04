@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row my-3">
+        <div class="col-8">
+            <h4 class="mt-4">Compras</h4>
+        </div>
+    </div>
+    <ul class="list-group ">
+        <li *ngFor="let item of compra" class="list-group-item d-flex">Fecha:{{item.fecha}} - Total: {{item.total}} - Producto: {{item.productoByProducto.nombre}}
+        </li>
+    </ul>
+</div>

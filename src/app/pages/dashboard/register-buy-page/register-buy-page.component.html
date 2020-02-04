@@ -1,0 +1,30 @@
+<div class="container-fluid" style="padding-bottom: 100px; ">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                    <h3 class="text-center text-info " style="margin-top: 10px; ">REGISTRO COMPRAS</h3>
+                    <div class="form-row">
+                        <div class="form-group form-group">
+                            <label>Producto</label>
+                            <mat-form-field class="example-full-width">
+                                <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let prod of productos" [value]="productos">
+                                        {{prod.codigo}} - {{prod.nombre}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label>cantidad</label>
+                        <input type="text " class="form-control ">
+                    </div>
+
+
+                    <button type="submit " class="btn btn-primary ">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
