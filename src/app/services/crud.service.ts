@@ -15,7 +15,7 @@ export abstract class CrudService<T, ID> implements OperacionesCrud<T, ID> {
     protected _http: HttpClient,
     protected _base: string
   ) {}
-  
+
   crear(t: T): Observable<any> {
     return this._http.post<any>(this._base + 'nuevo', t, cabecera);
   }
@@ -35,4 +35,12 @@ export abstract class CrudService<T, ID> implements OperacionesCrud<T, ID> {
     return this._http.delete<any>(this._base + 'borrar/' + id, cabecera);
   }
 
+  obtenercompras(id: ID): Observable<T[]> {
+    return this._http.get<T[]>(this._base + 'obtenercompras/' + id, cabecera);
+  }
+
+  obtenercomprasproductos(id: ID): Observable<T[]> {
+    return this._http.get<T[]>(this._base + 'obtenercomprasproductos/' + id, cabecera);
+  }
+  
 }

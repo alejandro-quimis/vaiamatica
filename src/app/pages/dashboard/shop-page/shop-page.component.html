@@ -4,18 +4,28 @@
             <h4 class="mt-4">Productos</h4>
         </div>
     </div>
+
     <mat-form-field>
-        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Ingrese Nombre del Producto">
     </mat-form-field>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         <mat-option *ngFor="let option of filteredOptions|async" [value]="option">{{option.nombre}}</mat-option>
     </mat-autocomplete>
-    <ul class="list-group ">
-        
-        <li *ngFor="let item of filteredOptions|async" class="list-group-item d-flex">{{item.nombre}}
-            <button type="button" class="btn btn-primary ml-auto mr-2"
-                (click)="this.addCar(item,value)">Comprar</button>
-            <input class="form-control " min="0" style="width:70px;display: inline;" #value type="number">
-        </li>
-    </ul>
+
+
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <div class="container">
+            <ul class="list-group " style="margin: 5px;">
+                <div class="container">
+                    <li style="height: 70px;" *cdkVirtualFor="let item of filteredOptions|async" class="list-group-item  d-flex example-item">Producto: {{item.nombre}} - Valor Unitario: {{item.valor|currency:'USD'}}
+                        <button type="button" class="btn btn-primary ml-auto mr-2 " (click)="this.addCar(item,value)">Comprar</button>
+                        <input class="form-control " min="0" style=" width: 70px ; display: inline;" #value type="number">
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </cdk-virtual-scroll-viewport>
+
+
+
 </div>

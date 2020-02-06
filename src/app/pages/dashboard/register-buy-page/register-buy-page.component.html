@@ -2,28 +2,49 @@
     <div id="login-row" class="row justify-content-center align-items-center">
         <div id="login-column" class="col-md-6">
             <div id="login-box" class="col-md-12">
-                    <h3 class="text-center text-info " style="margin-top: 10px; ">REGISTRO COMPRAS</h3>
-                    <div class="form-row">
-                        <div class="form-group form-group">
-                            <label>Producto</label>
-                            <mat-form-field class="example-full-width">
-                                <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-                                <mat-autocomplete #auto="matAutocomplete">
-                                    <mat-option *ngFor="let prod of productos" [value]="productos">
-                                        {{prod.codigo}} - {{prod.nombre}}
-                                    </mat-option>
-                                </mat-autocomplete>
-                            </mat-form-field>
+                <h3 class="text-center text-info " style="margin-top: 10px; ">ACTUALIZACION DE COMPRAS</h3>
+                <div class="form-row">
+                    <div class="form-group form-group">
+
+                        <mat-form-field>
+                            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Ingrese Nombre del Producto">
+                        </mat-form-field>
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option (click)="enviar(option)" *ngFor="let option of filteredOptions|async" [value]="option">{{option.nombre}}</mat-option>
+                        </mat-autocomplete>
+
+
+                    </div>
+                </div>
+
+                <div class="form-row ">
+                    <!-- For="let item of filteredOptions|async" -->
+                    <form *ngIf="forma !== null" [formGroup]="forma" (ngSubmit)="Submit()">
+                        <input formControlName="codigocompra" type="hidden" class="form-control ">
+                        <input formControlName="codigoproducto" type="hidden" class="form-control ">
+                        <input formControlName="codigousuario" type="hidden" class="form-control ">
+                        <input formControlName="unitario" type="hidden" class="form-control ">
+
+                        <div class="form-group ">
+                            <label>producto</label>
+                            <input formControlName="producto" type="text " class="form-control ">
                         </div>
-                    </div>
+                        <div class="form-group ">
+                            <label>cantidad</label>
+                            <input (keyup)="cambio()" type="number" formControlName="cantidad" class="form-control ">
+                        </div>
+                        <div class="form-group ">
+                            <label>total</label>
+                            <input type="number" formControlName="total" class="form-control ">
+                        </div>
 
-                    <div class="form-group ">
-                        <label>cantidad</label>
-                        <input type="text " class="form-control ">
-                    </div>
+                        <button type="submit " class="btn btn-primary" style="margin-right: 15px">Actualizar</button>
+
+                    </form>
+                </div>
 
 
-                    <button type="submit " class="btn btn-primary ">Comprar</button>
+
             </div>
         </div>
     </div>

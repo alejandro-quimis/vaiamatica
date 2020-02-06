@@ -1,32 +1,39 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ListBuyPageComponent } from './list-buy-page/list-buy-page.component';
 import { RegisterBuyPageComponent } from './register-buy-page/register-buy-page.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
-import { UpdateUserPageComponent } from './update-user-page/update-user-page.component';
 import { ActualizarComponent } from 'src/app/auth/actualizar/actualizar.component';
 import { ShopPageComponent } from './shop-page/shop-page.component';
+import {MatIconModule} from '@angular/material/icon';
 
 const components = [
-  ListBuyPageComponent, RegisterBuyPageComponent,UpdateUserPageComponent,ActualizarComponent
-]
+  ListBuyPageComponent, RegisterBuyPageComponent, ActualizarComponent
+];
 
-const modules =[
+const modules = [
   CommonModule,
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    DashboardRoutingModule
-]
+    DashboardRoutingModule,
+  ];
 
 @NgModule({
   declarations: [...components, ShopPageComponent],
   imports: [
-    ...modules
+    ...modules,
+    ScrollingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule
   ],
-  exports:[...components,...modules]
+  exports: [...components, ...modules]
 })
 export class DashboardModule { }

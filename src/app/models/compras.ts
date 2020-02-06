@@ -2,8 +2,9 @@ import { Producto } from './producto';
 import { Usuario } from './usuario';
 export class Compras {
     codigo: number;
-    Producto: number;
-    Usuario: number;
+    producto: number;
+    usuario: number;
     cantidad: number;
     fecha: Date;
+    total: number;
 }

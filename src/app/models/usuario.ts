@@ -7,4 +7,5 @@ export class Usuario {
     provincia: string;
     ciudad: string;
     correo: string;
+    estado: string;
 }

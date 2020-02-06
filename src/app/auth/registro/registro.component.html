@@ -30,9 +30,8 @@
                         <div class="form-group col-md-6 ">
                             <label>Provincia</label>
                             <select formControlName="provincia" class="form-control ">
-                                <option selected>seleccione...</option>
-                                <option >Guayas</option>
-                                <option>pichincha</option>
+                                <option *ngFor="let pro of provincias; index as i ">
+                                {{pro.provincia}}</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 ">

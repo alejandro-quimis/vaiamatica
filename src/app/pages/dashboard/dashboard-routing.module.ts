@@ -7,9 +7,9 @@ import { ShopPageComponent } from './shop-page/shop-page.component';
 
 
 const routes: Routes = [
-  {path:'',component:ShopPageComponent},
+  {path: '', component: ShopPageComponent},
   {path: 'list-buy' , component: ListBuyPageComponent },
-  {path: 'register-buy' , component: RegisterBuyPageComponent},
+  {path: 'register-buy/:id' , component: RegisterBuyPageComponent},
   {path: 'update-user' , component: ActualizarComponent},
 ];
 

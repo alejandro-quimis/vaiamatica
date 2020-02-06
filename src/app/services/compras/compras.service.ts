@@ -11,4 +11,6 @@ export class ComprasService extends CrudService<Compras, number> {
   constructor(protected httpClient: HttpClient) {
     super(httpClient, 'http://localhost:8080/api/compras/');
    }
+
+   
 }

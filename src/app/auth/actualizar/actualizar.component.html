@@ -2,7 +2,6 @@
     <div id="login-row" class="row justify-content-center align-items-center">
         <div id="login-column" class="col-md-6">
             <div id="login-box" class="col-md-12">
-                <button class="btn btn-danger" (click)="eliminar()">Eliminar usuario</button>
                 <form [formGroup]="forma" (ngSubmit)="Submit()">
 
                     <h3 class="mt-4 abajo">ACTUALIZAR USUARIO</h3>
@@ -31,10 +30,8 @@
                         <div class="form-group col-md-6 ">
                             <label>Provincia</label>
                             <select formControlName="provincia" class="form-control ">
-                                <option value="default" disabled selected>PROVINCIA</option>
-                                <option value="guayas">Guayas</option>
-                                <option value="pichincha">Pichincha</option>
-                                <option value="manabi">Manabi</option>
+                                <option *ngFor="let pro of provincias; index as i ">
+                                {{pro.provincia}}</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 ">
@@ -47,9 +44,10 @@
                         </div>
                     </div>
 
-                    <button type="submit " class="btn btn-primary ">enviar</button>
-                </form>
+                    <button type="submit " class="btn btn-primary" style="margin-right: 15px">enviar</button>
 
+                </form>
+                <button style="margin-top: 15px;" class="btn btn-danger" (click)="eliminar()">Eliminar usuario</button>
             </div>
         </div>
     </div>
