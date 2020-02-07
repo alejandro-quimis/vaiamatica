@@ -1,6 +1,4 @@
-/*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 * {
     margin: 0px;
     padding: 0px;
@@ -384,5 +382,13 @@ iframe {
         opacity: 1;
     }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

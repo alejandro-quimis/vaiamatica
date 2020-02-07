@@ -42,5 +42,9 @@ export abstract class CrudService<T, ID> implements OperacionesCrud<T, ID> {
   obtenercomprasproductos(id: ID): Observable<T[]> {
     return this._http.get<T[]>(this._base + 'obtenercomprasproductos/' + id, cabecera);
   }
+
+  obtenercomprasproductossuario(id: ID): Observable<T[]> {
+    return this._http.get<T[]>(this._base + 'obtenercomprasproductosusuario/' + id, cabecera);
+  }
   
 }

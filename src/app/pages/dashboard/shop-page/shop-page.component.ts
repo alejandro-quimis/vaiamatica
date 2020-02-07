@@ -59,14 +59,14 @@ export class ShopPageComponent implements OnInit {
         });
       } else {
       this.productos.push(item);
-      this.total += item.valor * Number(valor.value);
+      this.total = item.valor * Number(valor.value);
       this.compra = new Compras();
       this.compra.producto = item.codigo;
       this.compra.cantidad = Number(valor.value);
       this.compra.fecha = new Date(new Date().getDay() + '/' + new Date().getMonth() + '/' + new Date().getFullYear());
       this.compra.total = this.total;
       this.compra.usuario = this._login.geUserLogin().id;
-
+      this.compra.estado = "a";
       this.compraService.crear(this.compra).subscribe(() => {},
       (err) => {
         console.log(err);
@@ -75,7 +75,7 @@ export class ShopPageComponent implements OnInit {
           icon: 'success',
           title: 'Compra Correcta',
           text: `Su valor a pagar es $ ${this.total}`,
-        });
+          });
         this.total = 0;
       }
       });

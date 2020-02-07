@@ -7,4 +7,5 @@ export class Compras {
     cantidad: number;
     fecha: Date;
     total: number;
+    estado: string;
 }

@@ -12,9 +12,10 @@ import { MaterialModule } from 'src/app/material.module';
 import { ActualizarComponent } from 'src/app/auth/actualizar/actualizar.component';
 import { ShopPageComponent } from './shop-page/shop-page.component';
 import {MatIconModule} from '@angular/material/icon';
-
+import { UpdatemodalComponent } from './updatemodal/updatemodal.component';
+import {MatDialogModule} from '@angular/material/dialog';
 const components = [
-  ListBuyPageComponent, RegisterBuyPageComponent, ActualizarComponent
+  ListBuyPageComponent, RegisterBuyPageComponent, ActualizarComponent,UpdatemodalComponent
 ];
 
 const modules = [
@@ -23,10 +24,11 @@ const modules = [
     ReactiveFormsModule,
     FormsModule,
     DashboardRoutingModule,
+    MatDialogModule,
   ];
 
 @NgModule({
-  declarations: [...components, ShopPageComponent],
+  declarations: [...components, ShopPageComponent, UpdatemodalComponent],
   imports: [
     ...modules,
     ScrollingModule,
@@ -34,6 +36,7 @@ const modules = [
     MatPaginatorModule,
     MatIconModule
   ],
-  exports: [...components, ...modules]
+  exports: [...components, ...modules],
+  entryComponents:[UpdatemodalComponent]
 })
 export class DashboardModule { }

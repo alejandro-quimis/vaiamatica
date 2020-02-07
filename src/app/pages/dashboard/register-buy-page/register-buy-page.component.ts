@@ -78,7 +78,6 @@ export class RegisterBuyPageComponent implements OnInit {
     this.forma.get('unitario').setValue(event.valor);
   }
   cambio(){
-    
     this.forma.get('total').setValue(Number(this.forma.get('cantidad').value) * Number(this.forma.get('unitario').value));
   }
 
@@ -88,6 +87,7 @@ export class RegisterBuyPageComponent implements OnInit {
   }
 
   Submit() {
+    
 
   }
 
