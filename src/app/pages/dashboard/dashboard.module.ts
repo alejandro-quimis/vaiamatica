@@ -11,11 +11,16 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 import { ActualizarComponent } from 'src/app/auth/actualizar/actualizar.component';
 import { ShopPageComponent } from './shop-page/shop-page.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
 import { UpdatemodalComponent } from './updatemodal/updatemodal.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
+
 const components = [
-  ListBuyPageComponent, RegisterBuyPageComponent, ActualizarComponent,UpdatemodalComponent
+  ListBuyPageComponent,
+  RegisterBuyPageComponent,
+  ActualizarComponent,
+  UpdatemodalComponent,
+  ShopPageComponent
 ];
 
 const modules = [
@@ -25,18 +30,16 @@ const modules = [
     FormsModule,
     DashboardRoutingModule,
     MatDialogModule,
-  ];
-
-@NgModule({
-  declarations: [...components, ShopPageComponent, UpdatemodalComponent],
-  imports: [
-    ...modules,
     ScrollingModule,
     MatTableModule,
     MatPaginatorModule,
     MatIconModule
-  ],
+  ];
+
+@NgModule({
+  declarations: [...components],
+  imports: [...modules],
   exports: [...components, ...modules],
-  entryComponents:[UpdatemodalComponent]
+  entryComponents: [UpdatemodalComponent]
 })
 export class DashboardModule { }

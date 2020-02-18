@@ -66,18 +66,6 @@ export class ListBuyPageComponent implements AfterViewInit {
   }
 
   getcompra() {
-    /*this.compraService.obtenercompras(this._auth.geUserLogin().id).subscribe( (e: Compras[]) => {
-      this.compra = e;
-      this.dataSource.data = (this.compra);
-      // tslint:disable-next-line: prefer-for-of
-      for (let i = 0; i < this.compra.length; i++) {
-       this.productoservice.detalle(this.compra[i].producto).subscribe(data => {
-         this.productos.push(data);
-       });
-       }
-      this.dataSource._updateChangeSubscription();
-   });*/
-
    this.compraService.obtenercomprasproductossuario(this._auth.geUserLogin().id).subscribe((e: any) => {
       console.log(e);
       this.dataSource.data = (e);

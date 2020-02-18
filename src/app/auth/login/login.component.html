@@ -1,22 +1,27 @@
-<div class="container-login100 arriba">
-    <form [formGroup]="formulario" (ngSubmit)="submit()">
-        <span class="login100-form-title  abajo">
-            Login
-        </span>
-        <div class="form-group ">
-            <label>Usuario</label>
-            <input formControlName="usuario" type="email" class="form-control ">
-        </div>
-        <div class="form-group">
-            <label>Contraseña</label>
-            <input formControlName="contrasena" type="password" class="form-control">
-        </div>
-        <div class="abajo">
-            <a [routerLink]="[ '/registro' ]" class="txt1">
-                ¿No tienes cuenta?
-            </a>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="imagen h-100">
+    <div style=" height: 100%; ;" class="flex-column d-flex justify-content-center align-items-center">
 
+        <div class="text-center p-3 text-uppercase text-white" style="font-weight: 600 !important;  font-size:40px !important;">Login</div>
+        <div class="card cardsize">
+            <div class="card-body">
+                <form [formGroup]="formulario" (ngSubmit)="submit()">
+                    <div class="form-group ">
+                        <label>Usuario</label>
+                        <input formControlName="usuario" type="email" class="form-control ">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input formControlName="contrasena" type="password" class="form-control">
+                    </div>
+                    <div class="abajo">
+                        <a [routerLink]="[ '/registro' ]" class="txt1">
+                        ¿No tienes cuenta?
+                    </a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,21 @@
+body,
+html {
+    height: 100%;
+}
+
+.imagen {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/fondo-paisaje-retro-futurista-sol_52683-18176.jpg');
+    background-size: 100% 100%;
+}
+
+.cardsize {
+    width: 500px;
+}
+
+@media(max-width: 500px) {
+    .cardsize {
+        width: 300px;
+    }
+}

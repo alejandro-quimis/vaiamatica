@@ -1,10 +1,16 @@
-<div class="container-fluid" style="padding-bottom: 100px;">
-    <div id="login-row" class="row justify-content-center align-items-center">
-        <div id="login-column" class="col-md-6">
-            <div id="login-box" class="col-md-12">
+<div class="container ">
+    <div class="row justify-content-center">
+
+        <div class="card mt-4">
+            <div class="card-header">
+
+                <h3>ACTUALIZAR USUARIO</h3>
+
+            </div>
+            <div class="card-body">
+
                 <form [formGroup]="forma" (ngSubmit)="Submit()">
 
-                    <h3 class="mt-4 abajo">ACTUALIZAR USUARIO</h3>
                     <input formControlName="codigo" type="hidden" class="form-control ">
                     <div class="form-group ">
                         <label>nombre</label>
@@ -32,22 +38,29 @@
                             <select formControlName="provincia" class="form-control ">
                                 <option *ngFor="let pro of provincias; index as i ">
                                 {{pro.provincia}}</option>
-                            </select>
+                                </select>
                         </div>
                         <div class="form-group col-md-6 ">
                             <label>ciudad</label>
                             <select formControlName="ciudad" class="form-control ">
-                                <option value="default" disabled selected>CIUDAD</option>
-                                <option value="guayaquil" >Guayaquil</option>
-                                <option value="quito">Quito</option>
-                            </select>
+                                        <option value="default" disabled selected>CIUDAD</option>
+                                        <option value="guayaquil" >Guayaquil</option>
+                                        <option value="quito">Quito</option>
+                                        </select>
                         </div>
                     </div>
 
-                    <button type="submit " class="btn btn-primary" style="margin-right: 15px">enviar</button>
+                    <div class="row justify-content-between">
+                        <div class="col-2">
+                            <button type="submit " class="btn btn-primary" style="margin-right: 15px">enviar</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-danger" (click)="eliminar()">Eliminar usuario</button>
+                        </div>
+                    </div>
 
                 </form>
-                <button style="margin-top: 15px;" class="btn btn-danger" (click)="eliminar()">Eliminar usuario</button>
+
             </div>
         </div>
     </div>

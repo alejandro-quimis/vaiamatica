@@ -7,7 +7,12 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 const routes: Routes = [
-  {path: '' ,canActivate:[GuardsGuard],  component: HomePageComponent, loadChildren:()=>import('./pages/dashboard/dashboard.module').then(e=>e.DashboardModule)},
+  // tslint:disable-next-line: max-line-length
+  {path: '' , canActivate: [GuardsGuard],
+  component: HomePageComponent,
+  loadChildren: () => import('./pages/dashboard/dashboard.module')
+  .then(e => e.DashboardModule)},
+  
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
   ];
