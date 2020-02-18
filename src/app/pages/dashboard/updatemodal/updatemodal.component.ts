@@ -84,6 +84,8 @@ export class UpdatemodalComponent {
   }
 
   enviar(event) {
+    console.log(event.codigo);
+    this.forma.get('codigoproducto').setValue(event.codigo);
     this.forma.get('producto').setValue(event.nombre);
     this.forma.get('cantidad').setValue('');
     this.forma.get('total').setValue('');
@@ -106,6 +108,8 @@ export class UpdatemodalComponent {
     this.compra.producto =  this.forma.get('codigoproducto').value;
     this.compra.usuario = this.forma.get('codigousuario').value;
     this.compra.total = this.forma.get('total').value;
+    this.compra.estado = 'a';
+    console.log(this.forma.get('codigoproducto').value);
     console.log(this.compra);
     this.compraservice.actualizar(this.compra, this.compra.codigo).subscribe(() => {
     }, (err) => {

@@ -25,9 +25,9 @@ export class ListBuyPageComponent implements AfterViewInit {
 
   // tslint:disable-next-line: max-line-length
   constructor(public dialog: MatDialog,
-    private router: Router, 
-    private compraService: ComprasService, 
-    private  productoservice: ProductoService, 
+    private router: Router,
+    private compraService: ComprasService,
+    private  productoservice: ProductoService,
     private _auth: AuthService) {
   this.getcompra();
 

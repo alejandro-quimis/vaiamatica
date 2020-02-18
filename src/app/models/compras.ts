@@ -1,5 +1,4 @@
-import { Producto } from './producto';
-import { Usuario } from './usuario';
+
 export class Compras {
     codigo: number;
     producto: number;
